@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Cards model\" />
+    <PackageReference Include="Svg" Version="3.4.7" />
   </ItemGroup>
 
 </Project>

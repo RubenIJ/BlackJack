@@ -1,27 +1,10 @@
-﻿using System;
-using BlackJack.Models;
+﻿using System.Collections.Generic;
 
-namespace BlackJack.Logic
+namespace BlackJack.Models
 {
-    internal class Dealer
+    public class Dealer
     {
-        private Hand hand;
-
-        public void Hit(Card card)
-        {
-        }
-
-        public void Stand()
-        {
-        }
-
-        public Card Deal(Deck deck)
-        {
-            return null;
-        }
-
-        public void Reset()
-        {
-        }
+        public List<Card> hand = new List<Card>();
+        public int Score = 0;
     }
 }

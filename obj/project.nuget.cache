@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "DSKPCCu0d8Y=",
+  "dgSpecHash": "08xssZC3w5I=",
   "success": true,
   "projectFilePath": "C:\\Users\\rvani\\source\\repos\\BlackJack\\BlackJack\\BlackJack.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\rvani\\.nuget\\packages\\excss\\4.2.3\\excss.4.2.3.nupkg.sha512",
+    "C:\\Users\\rvani\\.nuget\\packages\\svg\\3.4.7\\svg.3.4.7.nupkg.sha512"
+  ],
   "logs": []
 }

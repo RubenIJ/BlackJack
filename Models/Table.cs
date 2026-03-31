@@ -1,25 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using BlackJack.Models;
+﻿using System.Collections.Generic;
 
-namespace BlackJack.Logic
+namespace BlackJack.Models
 {
-    internal class Table
+    public class Table
     {
-        private Shoe shoe;
-        private Dealer dealer;
-        private List<Player> players;
-        private GameState gameState;
-        private int chips;
-        private int points;
-        private int activePlayerIndex;
+        public Shoe shoe = new Shoe(6);
+        public Dealer dealer = new Dealer();
+        public List<Player> players = new List<Player>();
 
-        public Table(int shoeSize, int amountOfPlayers)
+        public Table()
         {
-        }
-
-        public void NextMove(string input)
-        {
+            players.Add(new Player()); // Speler 1
+            players.Add(new Player()); // Speler 2
+            players.Add(new Player()); // Speler 3
         }
     }
 }
