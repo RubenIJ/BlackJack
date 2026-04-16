@@ -69,14 +69,25 @@ namespace BlackJack
             }
         }
 
+        //Dealer
         private void button5_Click(object sender, EventArgs e)
         {
             if (tellerDealer >= 2) return;
+
             Card c = blackjackShoe.Draw();
             if (c != null)
             {
-                if (tellerDealer == 0) ZetKaartInBox(pictureBox7, c);
-                else if (tellerDealer == 1) ZetKaartInBox(pictureBox8, c);
+                if (tellerDealer == 0)
+                {
+                    string pad = Path.Combine(Application.StartupPath, "..", "..", "..", "Cards model", "PNG-cards-1.3", "Back_of_card.png");
+                    pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox7.Image = Image.FromFile(pad);
+                    pictureBox7.Tag = c;
+                }
+                else if (tellerDealer == 1)
+                {
+                    ZetKaartInBox(pictureBox8, c);
+                }
                 tellerDealer++;
             }
         }
