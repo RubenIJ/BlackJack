@@ -36,17 +36,11 @@ namespace BlackJack
         private void InitializeComponent()
         {
             label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
             label4 = new Label();
             button1 = new Button();
             button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
             button5 = new Button();
             Inzet1 = new ListBox();
-            Inzet3 = new ListBox();
-            Inzet2 = new ListBox();
             button6 = new Button();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
@@ -69,38 +63,20 @@ namespace BlackJack
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(528, 557);
+            label1.Location = new Point(500, 244);
             label1.Name = "label1";
-            label1.Size = new Size(53, 20);
+            label1.Size = new Size(59, 20);
             label1.TabIndex = 3;
-            label1.Text = "Dealer";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(176, 314);
-            label2.Name = "label2";
-            label2.Size = new Size(59, 20);
-            label2.TabIndex = 4;
-            label2.Text = "Speler1";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(502, 204);
-            label3.Name = "label3";
-            label3.Size = new Size(59, 20);
-            label3.TabIndex = 5;
-            label3.Text = "Speler2";
+            label1.Text = "Speler1";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(835, 314);
+            label4.Location = new Point(506, 557);
             label4.Name = "label4";
-            label4.Size = new Size(59, 20);
+            label4.Size = new Size(53, 20);
             label4.TabIndex = 6;
-            label4.Text = "Speler3";
+            label4.Text = "Dealer";
             // 
             // button1
             // 
@@ -114,33 +90,13 @@ namespace BlackJack
             // 
             // button2
             // 
-            button2.Location = new Point(67, 375);
+            button2.Location = new Point(391, 305);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 8;
             button2.Text = "Deal Cards";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(434, 265);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 29);
-            button3.TabIndex = 10;
-            button3.Text = "Deal Cards";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(771, 375);
-            button4.Name = "button4";
-            button4.Size = new Size(94, 29);
-            button4.TabIndex = 11;
-            button4.Text = "Deal Cards";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
             // 
             // button5
             // 
@@ -155,26 +111,10 @@ namespace BlackJack
             // Inzet1
             // 
             Inzet1.FormattingEnabled = true;
-            Inzet1.Location = new Point(162, 337);
+            Inzet1.Location = new Point(486, 267);
             Inzet1.Name = "Inzet1";
             Inzet1.Size = new Size(94, 24);
             Inzet1.TabIndex = 13;
-            // 
-            // Inzet3
-            // 
-            Inzet3.FormattingEnabled = true;
-            Inzet3.Location = new Point(823, 337);
-            Inzet3.Name = "Inzet3";
-            Inzet3.Size = new Size(94, 24);
-            Inzet3.TabIndex = 14;
-            // 
-            // Inzet2
-            // 
-            Inzet2.FormattingEnabled = true;
-            Inzet2.Location = new Point(487, 227);
-            Inzet2.Name = "Inzet2";
-            Inzet2.Size = new Size(94, 24);
-            Inzet2.TabIndex = 15;
             // 
             // button6
             // 
@@ -188,7 +128,7 @@ namespace BlackJack
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(54, 151);
+            pictureBox1.Location = new Point(392, 68);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(125, 160);
             pictureBox1.TabIndex = 17;
@@ -197,7 +137,7 @@ namespace BlackJack
             // 
             // pictureBox2
             // 
-            pictureBox2.Location = new Point(218, 151);
+            pictureBox2.Location = new Point(546, 68);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(125, 160);
             pictureBox2.TabIndex = 18;
@@ -205,7 +145,7 @@ namespace BlackJack
             // 
             // pictureBox3
             // 
-            pictureBox3.Location = new Point(393, 41);
+            pictureBox3.Location = new Point(714, 68);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(125, 160);
             pictureBox3.TabIndex = 19;
@@ -213,7 +153,7 @@ namespace BlackJack
             // 
             // pictureBox4
             // 
-            pictureBox4.Location = new Point(546, 41);
+            pictureBox4.Location = new Point(213, 68);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(125, 160);
             pictureBox4.TabIndex = 20;
@@ -221,7 +161,7 @@ namespace BlackJack
             // 
             // pictureBox5
             // 
-            pictureBox5.Location = new Point(727, 151);
+            pictureBox5.Location = new Point(39, 68);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(125, 160);
             pictureBox5.TabIndex = 21;
@@ -229,7 +169,7 @@ namespace BlackJack
             // 
             // pictureBox6
             // 
-            pictureBox6.Location = new Point(881, 151);
+            pictureBox6.Location = new Point(877, 68);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(125, 160);
             pictureBox6.TabIndex = 22;
@@ -265,17 +205,11 @@ namespace BlackJack
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(button6);
-            Controls.Add(Inzet2);
-            Controls.Add(Inzet3);
             Controls.Add(Inzet1);
             Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form1";
             Text = "Form1";
@@ -293,17 +227,11 @@ namespace BlackJack
 
         #endregion
         private Label label1;
-        private Label label2;
-        private Label label3;
         private Label label4;
         private Button button1;
         private Button button2;
-        private Button button3;
-        private Button button4;
         private Button button5;
         private ListBox Inzet1;
-        private ListBox Inzet3;
-        private ListBox Inzet2;
         private Button button6;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;

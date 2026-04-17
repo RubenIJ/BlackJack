@@ -10,9 +10,11 @@ namespace BlackJack
     {
         private Shoe blackjackShoe;
         private int tellerP1 = 0;
-        private int tellerP2 = 0;
-        private int tellerP3 = 0;
+
         private int tellerDealer = 0;
+        private Hand handP1 = new Hand();
+
+        private Hand handDealer = new Hand();
 
         public Form1()
         {
@@ -30,63 +32,53 @@ namespace BlackJack
         private void button1_Click_1(object sender, EventArgs e)
         {
             blackjackShoe.Shuffle();
-            //MessageBox.Show("Kaarten geshuffeld!");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (tellerP1 >= 2) return;
+            if (tellerP1 >= 6) return;
+
             Card c = blackjackShoe.Draw();
             if (c != null)
             {
-                if (tellerP1 == 0) ZetKaartInBox(pictureBox1, c);
-                else if (tellerP1 == 1) ZetKaartInBox(pictureBox2, c);
+                handP1.Hit(c);
+
+                PictureBox[] boxen = { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6 };
+                ZetKaartInBox(boxen[tellerP1], c);
+
                 tellerP1++;
+                label1.Text = "Speler 1: " + handP1.Total;
+
+                if (handP1.Total > 21)
+                {
+                    MessageBox.Show("De speler heeft meer dan 21, Dealer wint.");
+                }
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (tellerP2 >= 2) return;
-            Card c = blackjackShoe.Draw();
-            if (c != null)
-            {
-                if (tellerP2 == 0) ZetKaartInBox(pictureBox3, c);
-                else if (tellerP2 == 1) ZetKaartInBox(pictureBox4, c);
-                tellerP2++;
-            }
-        }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (tellerP3 >= 2) return;
-            Card c = blackjackShoe.Draw();
-            if (c != null)
-            {
-                if (tellerP3 == 0) ZetKaartInBox(pictureBox5, c);
-                else if (tellerP3 == 1) ZetKaartInBox(pictureBox6, c);
-                tellerP3++;
-            }
-        }
 
-        //Dealer
+
+
         private void button5_Click(object sender, EventArgs e)
         {
             if (tellerDealer >= 2) return;
-
             Card c = blackjackShoe.Draw();
             if (c != null)
             {
+                handDealer.Hit(c);
                 if (tellerDealer == 0)
                 {
                     string pad = Path.Combine(Application.StartupPath, "..", "..", "..", "Cards model", "PNG-cards-1.3", "Back_of_card.png");
                     pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
                     pictureBox7.Image = Image.FromFile(pad);
                     pictureBox7.Tag = c;
+                    label4.Text = "Dealer: 0";
                 }
                 else if (tellerDealer == 1)
                 {
                     ZetKaartInBox(pictureBox8, c);
+                    label4.Text = "Dealer: " + c.Value;
                 }
                 tellerDealer++;
             }
@@ -94,37 +86,33 @@ namespace BlackJack
 
         private void button6_Click(object sender, EventArgs e)
         {
-            tellerP1 = tellerP2 = tellerP3 = tellerDealer = 0;
+            tellerP1 = tellerDealer = 0;
 
-            pictureBox1.Image = pictureBox2.Image = null;
-            pictureBox3.Image = pictureBox4.Image = null;
-            pictureBox5.Image = pictureBox6.Image = null;
+            pictureBox1.Image = pictureBox2.Image = pictureBox3.Image = null;
+            pictureBox4.Image = pictureBox5.Image = pictureBox6.Image = null;
             pictureBox7.Image = pictureBox8.Image = null;
+
+            handP1 = new Hand();
+            handDealer = new Hand();
+
+            label1.Text = "Speler 1: 0";
+            label4.Text = "Dealer: 0";
 
             blackjackShoe = new Shoe(6);
             blackjackShoe.Shuffle();
         }
 
-        public void TekenKaart(Card kaart, int xPos, int yPos, int hoeveelsteKaart)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            PictureBox pb = new PictureBox();
-            string pad = Path.Combine(Application.StartupPath, "..", "..", "Cards model", "SVG-cards-1.3", kaart.ToString().ToLower() + ".svg");
 
-            if (File.Exists(pad))
-            {
-                pb.ImageLocation = pad;
-            }
-
-            pb.SizeMode = PictureBoxSizeMode.StretchImage;
-            pb.Width = 80;
-            pb.Height = 110;
-            pb.Location = new Point(xPos + (hoeveelsteKaart * 20), yPos);
-
-            this.Controls.Add(pb);
-            pb.BringToFront();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
